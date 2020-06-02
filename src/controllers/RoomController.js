@@ -2,14 +2,14 @@ const Room = require('../models/Room')
 
 module.exports = {    
     async create(req,res){
-        const {title, price, city, state, description, imgUrl} = req.body
+        const {title, price, city, phone, description, imgUrl} = req.body
         const {user_id} = req.headers
         try{
             const room = await Room.create({
                 title,
                 price,
                 city,
-                state,
+                phone,
                 description,
                 imgUrl,
                 user: user_id
